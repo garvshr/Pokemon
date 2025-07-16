@@ -16,7 +16,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -25,19 +24,18 @@ import coil.compose.rememberAsyncImagePainter
 
 
 @Composable
-fun pokemonItem(pokemonData: pokemonData) {
+fun pokemonItem(pokemonData: pokemonData, onClick: () -> Unit) {
     val id = pokemonData.url.trimEnd('/').split("/").last()
     val imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/$id.png"
 
     Card(
-        modifier = Modifier
-            .padding(16.dp),
-        elevation = CardDefaults.cardElevation(4.dp),
-        colors = CardDefaults.cardColors(Color.White)
+        modifier = Modifier.padding(16.dp),
+        elevation = CardDefaults.cardElevation(8.dp),
+        colors = CardDefaults.elevatedCardColors()
     ) {
         Column(
             modifier = Modifier
-                .clickable {}
+                .clickable { onClick() }
                 .padding(8.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -53,7 +51,6 @@ fun pokemonItem(pokemonData: pokemonData) {
             Text(
                 text = pokemonData.name.replaceFirstChar { it.uppercase() },
                 style = TextStyle(fontWeight = FontWeight.Bold),
-                color = Color.Black,
                 fontSize = 24.sp
             )
         }

@@ -1,6 +1,7 @@
 package com.garv.pokemon
 
 import HomeView
+import MainScreenWithDrawer
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -20,10 +21,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             PokemonTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    HomeView(innerPadding)
+                    MainScreenWithDrawer()
                 }
             }
         }
     }
-}
