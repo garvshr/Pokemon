@@ -25,7 +25,7 @@ Explore and search your favorite Pokémon in a clean and modern UI.
 
 ## 📦 Download
 
-[⬇️ Download APK](https://github.com/garvshr/Pokemon/raw/main/releases/pokemon-1.0.apk)
+[⬇️ Download APK](https://github.com/garvshr/Pokemon/raw/main/releases/pokemon-1.2.apk)
 
 > *Note: You may need to enable "Install unknown apps" in your device settings.*
 
